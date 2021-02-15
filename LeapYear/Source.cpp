@@ -19,6 +19,11 @@ int main()
 				tmp[j] = input[i];
 				j++;
 			}
+			if (input[i] < '0' || input[i]>'9')
+			{
+				j = 0;
+				break;
+			}
 		}
 		if (j != 0)
 			y = atoi(tmp);
