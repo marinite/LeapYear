@@ -2,34 +2,24 @@
 #include <string>
 using namespace std;
 void leap_year(int y);
+
 int main()
 {
-	int y = -1, j = 0;
+	int y = -1;
 	string input;
-	char tmp[10];
 
-	do
+	cout << "Input year: " << endl;
+	cin >> input;
+
+	try
 	{
-		cout << "Input year: " << endl;
-		cin >> input;
-		for (int i = 0; i < input.size(); i++)
-		{
-			if (input[i] >= '0' && input[i] <= '9')
-			{
-				tmp[j] = input[i];
-				j++;
-			}
-			if (input[i] < '0' || input[i]>'9')
-			{
-				j = 0;
-				break;
-			}
-		}
-		if (j != 0)
-			y = atoi(tmp);
-	} while (y == -1);
-
-	leap_year(y);
+		y = stoi(input.c_str());
+		leap_year(y);
+	}
+	catch (...)
+	{
+		cout << "Error" << endl;
+	}
 
 	return 0;
 }
